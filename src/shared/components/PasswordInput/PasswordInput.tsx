@@ -1,5 +1,6 @@
 import React from "react";
 import { Input } from "@nextui-org/react";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 export const EyeSlashFilledIcon = (props: any) => {
   return (
@@ -60,7 +61,13 @@ export const EyeFilledIcon = (props: any) => {
     </svg>
   );
 };
-const PasswordInput = () => {
+const PasswordInput = ({
+  inputFormProps,
+  isError,
+}: {
+  inputFormProps: UseFormRegisterReturn<"password">;
+  isError: boolean;
+}) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
@@ -85,6 +92,8 @@ const PasswordInput = () => {
       label="Password"
       placeholder="Enter your password"
       type={isVisible ? "text" : "password"}
+      color={isError ? "danger" : "default"}
+      {...inputFormProps}
     />
   );
 };

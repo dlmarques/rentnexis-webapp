@@ -5,12 +5,17 @@ import "./assets/reset.css";
 import "./assets/index.css";
 import App from "./App.tsx";
 import { NextUIProvider } from "@nextui-org/react";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <NextUIProvider>
-        <App />
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
       </NextUIProvider>
     </BrowserRouter>
   </StrictMode>

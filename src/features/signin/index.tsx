@@ -1,18 +1,12 @@
-import Logo from "../../shared/components/Logo/Logo";
+import AuthSkeleton from "../../shared/components/AuthSkeleton/AuthSkeleton";
 import Form from "./components/Form";
-import styles from "./styles/signin.module.css";
 
 const SignIn = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-        <Logo width="500px" />
-      </div>
-      <div className={styles.right}>
-        <h3>Welcome back</h3>
-        <Form />
-      </div>
-    </div>
+    <AuthSkeleton>
+      <h3 style={{ color: "#304c57", fontWeight: "500" }}>Welcome back</h3>
+      <Form />
+    </AuthSkeleton>
   );
 };
 
