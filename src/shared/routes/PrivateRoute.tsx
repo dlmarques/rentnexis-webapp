@@ -9,15 +9,19 @@ const PrivateRoute = ({
   children: React.ReactNode;
   routeProps?: RouteProps;
 }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
 
   const getIsLoggedIn = async () => {
     const response = await fetch(
       "https://backend-qzrd.onrender.com/auth/IsLoggedIn",
-      { credentials: "include" }
+      {
+        credentials: "include",
+      }
     );
 
-    console.log(response);
+    const data = await response.json();
+
+    setIsLoggedIn(data.message.isLoggedIn);
   };
 
   useEffect(() => {

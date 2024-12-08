@@ -1,0 +1,18 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 50%;
+  padding: 32px;
+
+  /*   div {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #d9d9d9;
+    }
+  } */
+}
