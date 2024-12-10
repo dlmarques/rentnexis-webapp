@@ -1,6 +1,7 @@
 import { Navigate, Route, RouteProps } from "@resourge/react-router";
 import React, { useEffect, useState } from "react";
 import { RoutePaths } from "./routes";
+import { useAuth } from "@clerk/clerk-react";
 
 const PrivateRoute = ({
   children,
@@ -9,19 +10,20 @@ const PrivateRoute = ({
   children: React.ReactNode;
   routeProps?: RouteProps;
 }) => {
+  const { getToken } = useAuth();
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
 
   const getIsLoggedIn = async () => {
-    const response = await fetch(
-      "https://backend-qzrd.onrender.com/auth/IsLoggedIn",
-      {
-        credentials: "include",
-      }
-    );
+    const response = await fetch("http://localhost:3000/auth/IsLoggedIn", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${await getToken()}`,
+      },
+    });
 
-    const data = await response.json();
+    const { data } = await response.json();
 
-    setIsLoggedIn(data.message.isLoggedIn);
+    setIsLoggedIn(data.isLoggedIn);
   };
 
   useEffect(() => {
