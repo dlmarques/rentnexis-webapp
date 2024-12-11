@@ -1,11 +1,10 @@
+import { SignIn as SignInComponent } from "@clerk/clerk-react";
 import AuthSkeleton from "../../shared/components/AuthSkeleton/AuthSkeleton";
-import Form from "./components/Form";
 
 const SignIn = () => {
   return (
     <AuthSkeleton>
-      <h3 style={{ color: "#304c57", fontWeight: "500" }}>Welcome back</h3>
-      <Form />
+      <SignInComponent signUpUrl="/sign-up" afterSignOutUrl="/sign-in" />
     </AuthSkeleton>
   );
 };

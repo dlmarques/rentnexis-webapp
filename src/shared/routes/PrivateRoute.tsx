@@ -1,6 +1,7 @@
-import { Navigate, Route, RouteProps } from "@resourge/react-router";
-import React, { useEffect, useState } from "react";
+import { Route, RouteProps, useNavigate } from "@resourge/react-router";
+import React from "react";
 import { RoutePaths } from "./routes";
+import { useAuth } from "@clerk/clerk-react";
 
 const PrivateRoute = ({
   children,
@@ -9,30 +10,12 @@ const PrivateRoute = ({
   children: React.ReactNode;
   routeProps?: RouteProps;
 }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
+  const { isSignedIn } = useAuth();
+  const navigate = useNavigate();
 
-  const getIsLoggedIn = async () => {
-    const response = await fetch(
-      "https://backend-qzrd.onrender.com/auth/IsLoggedIn",
-      {
-        credentials: "include",
-      }
-    );
+  if (!isSignedIn) navigate(RoutePaths.signIn.path);
 
-    const data = await response.json();
-
-    setIsLoggedIn(data.message.isLoggedIn);
-  };
-
-  useEffect(() => {
-    getIsLoggedIn();
-  }, []);
-
-  return isLoggedIn ? (
-    <Route {...routeProps} children={children} />
-  ) : (
-    <Navigate to={RoutePaths.signIn.path} />
-  );
+  return <Route {...routeProps} children={children} />;
 };
 
 export default PrivateRoute;
