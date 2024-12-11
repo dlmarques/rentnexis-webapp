@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "@resourge/react-router";
 import "./assets/reset.css";
@@ -18,18 +17,16 @@ if (!PUBLISHABLE_KEY) {
 }
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ClerkProvider
-      publishableKey={PUBLISHABLE_KEY}
-      afterSignOutUrl={RoutePaths.signIn.path}
-    >
-      <BrowserRouter>
-        <NextUIProvider>
-          <QueryClientProvider client={queryClient}>
-            <App />
-          </QueryClientProvider>
-        </NextUIProvider>
-      </BrowserRouter>
-    </ClerkProvider>
-  </StrictMode>
+  <ClerkProvider
+    publishableKey={PUBLISHABLE_KEY}
+    afterSignOutUrl={RoutePaths.signIn.path}
+  >
+    <BrowserRouter>
+      <NextUIProvider>
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
+      </NextUIProvider>
+    </BrowserRouter>
+  </ClerkProvider>
 );
