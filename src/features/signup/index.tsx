@@ -8,7 +8,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const { isSignedIn } = useAuth();
 
-  if (isSignedIn) navigate(RoutePaths.dashboard.path);
+  if (isSignedIn) navigate(RoutePaths.saveUserCallback.path);
 
   if (!checkExistsRole()) {
     navigate(RoutePaths.oops.path);
@@ -16,7 +16,7 @@ const SignUp = () => {
 
   return (
     <AuthSkeleton>
-      <SignUpComponent signInUrl="/sign-in" />
+      <SignUpComponent signInUrl={RoutePaths.signIn.path} />
     </AuthSkeleton>
   );
 };
