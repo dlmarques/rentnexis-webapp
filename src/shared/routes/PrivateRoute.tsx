@@ -1,21 +1,23 @@
-import { Route, RouteProps, useNavigate } from "@resourge/react-router";
 import React from "react";
-import { RoutePaths } from "./routes";
+import { Route, Navigate } from "@resourge/react-router";
 import { useAuth } from "@clerk/clerk-react";
+import { RoutePaths } from "./routes";
 
-const PrivateRoute = ({
+const PrivateRoute: React.FC<{ children: React.ReactNode; path: string }> = ({
   children,
-  routeProps,
-}: {
-  children: React.ReactNode;
-  routeProps?: RouteProps;
+  path,
 }) => {
-  const { isSignedIn } = useAuth();
-  const navigate = useNavigate();
+  const { isSignedIn, isLoaded } = useAuth();
 
-  if (!isSignedIn) navigate(RoutePaths.signIn.path);
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
 
-  return <Route {...routeProps} children={children} />;
+  if (!isSignedIn) {
+    return <Navigate to={RoutePaths.signIn.path} />;
+  }
+
+  return <Route path={path}>{children}</Route>;
 };
 
 export default PrivateRoute;
