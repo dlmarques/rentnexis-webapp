@@ -1,14 +1,14 @@
 import { useAuth } from "@clerk/clerk-react";
 import { Button } from "@nextui-org/react";
-import React from "react";
+import Layout from "./layouts/Layout";
 
-const Dashboard = () => {
+const App = () => {
   const { signOut } = useAuth();
   return (
-    <div>
+    <Layout>
       <Button onClick={() => signOut()}>Logout</Button>
-    </div>
+    </Layout>
   );
 };
 
-export default Dashboard;
+export default App;

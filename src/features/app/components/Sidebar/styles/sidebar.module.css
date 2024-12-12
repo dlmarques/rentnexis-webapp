@@ -1,0 +1,29 @@
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #304c57;
+}
+
+.logo {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  ul {
+    li {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      color: #fff;
+      &:hover {
+        cursor: pointer;
+        background-color: #22363e;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.topbar {
+  width: calc(100vw - 200px);
+  height: 80px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 32px;
+}
