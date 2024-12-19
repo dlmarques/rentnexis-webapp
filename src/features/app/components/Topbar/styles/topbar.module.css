@@ -4,5 +4,7 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
   padding-right: 32px;
 }

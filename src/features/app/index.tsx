@@ -1,12 +1,10 @@
-import { useAuth } from "@clerk/clerk-react";
-import { Button } from "@nextui-org/react";
 import Layout from "./layouts/Layout";
+import Routes from "./routes/Routes";
 
 const App = () => {
-  const { signOut } = useAuth();
   return (
     <Layout>
-      <Button onClick={() => signOut()}>Logout</Button>
+      <Routes />
     </Layout>
   );
 };

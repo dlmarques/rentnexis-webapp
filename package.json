@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.19.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@nextui-org/react": "^2.6.5",
     "@nextui-org/system": "^2.4.4",
     "@nextui-org/theme": "^2.4.1",
