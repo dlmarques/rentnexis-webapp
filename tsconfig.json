@@ -1,8 +1,25 @@
 {
+  "compilerOptions": {
+    "types": ["node"],
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ESNext",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/shared/components/*"],
+      "@utils/*": ["src/shared/resources/utils/*"],
+      "@routes/*": ["src/shared/routes/*"],
+      "@globalStyles/*": ["src/shared/styles/*"],
+      "@globalData/*": ["src/shared/resources/data/*"],
+      "@pages/*": ["src/pages/*"],
+      "@features/*": ["src/features/*"],
+      "@assets/*": ["src/assets/*"]
+    }
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
 }
-// TODO - configure absolute paths

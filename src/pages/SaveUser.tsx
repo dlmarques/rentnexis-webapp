@@ -1,4 +1,4 @@
-import SaveUser from "../features/save-user";
+import SaveUser from "@features/save-user";
 
 const SaveUserPage = () => {
   return <SaveUser />;

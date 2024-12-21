@@ -1,8 +1,5 @@
 import axios from "axios";
-import {
-  BACKEND_URL,
-  ENDPOINTS,
-} from "../../../../shared/resources/data/Endpoints";
+import { BACKEND_URL, ENDPOINTS } from "@globalData/Endpoints";
 import { UserDataInputDto } from "../../models/UserDataDto";
 
 export const saveUser = async (userData: UserDataInputDto) => {

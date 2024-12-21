@@ -1,5 +1,5 @@
 import { Redirect, Route, Switch } from "@resourge/react-router";
-import { RoutePaths } from "../../../shared/routes/routes";
+import { RoutePaths } from "@routes/routes";
 import Dashboard from "../modules/dashboard";
 import MyProperties from "../modules/my-properties";
 import RentedHouses from "../modules/rented-houses";

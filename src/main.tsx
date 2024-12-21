@@ -1,12 +1,12 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "@resourge/react-router";
-import "./assets/reset.css";
-import "./assets/index.css";
+import "@assets/reset.css";
+import "@assets/index.css";
 import App from "./App.tsx";
 import { NextUIProvider } from "@nextui-org/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ClerkProvider } from "@clerk/clerk-react";
-import { RoutePaths } from "./shared/routes/routes.ts";
+import { RoutePaths } from "@routes/routes.ts";
 
 const queryClient = new QueryClient();
 

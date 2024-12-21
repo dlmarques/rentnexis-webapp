@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Navigate } from "@resourge/react-router";
 import { useAuth } from "@clerk/clerk-react";
-import { RoutePaths } from "./routes";
+import { RoutePaths } from "@routes/routes.ts";
 
 const PrivateRoute: React.FC<{ children: React.ReactNode; path: string }> = ({
   children,

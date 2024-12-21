@@ -1,4 +1,4 @@
-import App from "../features/app";
+import App from "@features/app";
 
 const AppPage = () => {
   return <App />;
