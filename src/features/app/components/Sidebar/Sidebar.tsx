@@ -1,5 +1,5 @@
 import { Button } from "@nextui-org/react";
-import Logo from "../../../../shared/components/Logo/Logo";
+import Logo from "@components/Logo/Logo";
 import styles from "./styles/sidebar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";

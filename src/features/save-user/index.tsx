@@ -3,7 +3,7 @@ import { SaveUserService } from "./services/SaveUserService";
 import { useEffect } from "react";
 import { UserDataInputDto } from "./models/UserDataDto";
 import { useNavigate } from "@resourge/react-router";
-import { RoutePaths } from "../../shared/routes/routes";
+import { RoutePaths } from "@routes/routes";
 
 const SaveUser = () => {
   const { user } = useUser();

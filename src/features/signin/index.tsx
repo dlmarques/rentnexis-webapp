@@ -1,7 +1,7 @@
 import { SignIn as SignInComponent, useAuth } from "@clerk/clerk-react";
-import AuthSkeleton from "../../shared/components/AuthSkeleton/AuthSkeleton";
+import AuthSkeleton from "@components/AuthSkeleton/AuthSkeleton";
 import { Navigate } from "@resourge/react-router";
-import { RoutePaths } from "../../shared/routes/routes";
+import { RoutePaths } from "@routes/routes";
 
 const SignIn = () => {
   const { isSignedIn } = useAuth();

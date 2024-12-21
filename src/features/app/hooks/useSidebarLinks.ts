@@ -1,4 +1,4 @@
-import { RoutePaths } from "../../../shared/routes/routes";
+import { RoutePaths } from "@routes/routes";
 import { SidebarLinks } from "../types/SidebarLinks";
 
 export const useSidebarLinks = (): { links: SidebarLinks[] } => {

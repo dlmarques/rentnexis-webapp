@@ -1,8 +1,8 @@
 import { SignUp as SignUpComponent, useAuth } from "@clerk/clerk-react";
-import AuthSkeleton from "../../shared/components/AuthSkeleton/AuthSkeleton";
+import AuthSkeleton from "@components/AuthSkeleton/AuthSkeleton";
 import { useNavigate } from "@resourge/react-router";
 import { checkExistsRole } from "./utils/checkRole";
-import { RoutePaths } from "../../shared/routes/routes";
+import { RoutePaths } from "@routes/routes";
 
 const SignUp = () => {
   const navigate = useNavigate();
