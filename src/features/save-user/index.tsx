@@ -20,7 +20,7 @@ const SaveUser = () => {
     try {
       const saveUserResponse = await SaveUserService.saveUser(data);
       if (saveUserResponse.data.success) {
-        navigate(RoutePaths.dashboard.path);
+        navigate(RoutePaths.app.path);
       } else {
         navigate(RoutePaths.oops.path);
       }
@@ -42,7 +42,7 @@ const SaveUser = () => {
         if (isFirstLogin) {
           saveUser(email);
         } else {
-          navigate(RoutePaths.dashboard.path);
+          navigate(RoutePaths.app.path);
         }
       } else {
         navigate(RoutePaths.signIn.path);
