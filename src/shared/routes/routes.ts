@@ -7,6 +7,7 @@ export const RoutePaths = SetupPaths({
     dashboard: path("dashboard"),
     myProperties: path("my-properties").routes({
       list: path("list"),
+      create: path("create"),
     }),
     rentedHouses: path("rented-houses"),
     messages: path("messages"),

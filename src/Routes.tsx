@@ -28,7 +28,7 @@ const Routes = () => {
           <Oops />
         </Route>
 
-        <Redirect from="" to={RoutePaths.app.path} />
+        <Redirect from="" to={RoutePaths.saveUserCallback.path} />
       </Switch>
     </Suspense>
   );

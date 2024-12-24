@@ -1,6 +1,6 @@
-export interface PropertyOutputDto {
-  property_id: string;
-  property_name: string;
+export type GetAllPropertiesInputDto = Array<{
+  propertyId: string;
+  propertyName: string;
   address: string;
   description: string;
   rooms: number;
@@ -9,4 +9,14 @@ export interface PropertyOutputDto {
   rules: string[];
   owner_id: number;
   status: { type: number; key: string };
+}>;
+
+export interface PropertyOutputDto {
+  propertyName: string;
+  address: string;
+  description: string;
+  rooms: string;
+  bathrooms: string;
+  amenities: string;
+  rules: string;
 }

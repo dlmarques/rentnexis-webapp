@@ -2,6 +2,7 @@ import TableComponent from "../../../../../../shared/components/Table";
 import ListHeader from "./components/ListHeader";
 import styles from "./styles/list.module.css";
 import PaginationComponent from "../../../../../../shared/components/Pagination";
+
 const MyPropertiesList = () => {
   return (
     <div className={styles["list-container"]}>
